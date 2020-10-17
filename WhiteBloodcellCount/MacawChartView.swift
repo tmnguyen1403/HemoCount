@@ -17,7 +17,7 @@ class MacawChartView: MacawView {
   
   static let dataDivisor        = Double(maxValue/maxValueLineHeight)
   static let adjustedData: [Double] = lastFiveShows.map({$0.videoCount / dataDivisor})
-  static var animation: [Animation] = []
+  static var animations: [Animation] = []
   
   required init?(coder aDecoder: NSCoder) {
     super.init(node: MacawChartView.createChart(), coder: aDecoder)
@@ -53,15 +53,42 @@ class MacawChartView: MacawView {
     let yAxis = Line(x1: 0, y1: 0, x2: 0, y2: yAxisHeight).stroke(fill: Color.white.with(a: 0.25))
     newNodes.append(yAxis)
     
-    return []
+    return newNodes
   }
   
   private static func addXAxisItems() -> [Node] {
-    return []
+    let chartBaseY: Double = 200
+    var newNodes: [Node] = []
+    
+    for i in 1...adjustedData.count {
+      let x = (Double(i) * 50)
+      let valueText = Text(text: lastFiveShows[i-1].showNumber, align: .max, baseline: .mid, place: .move(dx: x, dy: chartBaseY + 15))
+      valueText.fill = Color.white
+      newNodes.append(valueText)
+    }
+    
+    let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.white.with(a: 0.25))
+    newNodes.append(xAxis)
+    
+    return newNodes
   }
   
   private static func createBars() -> Group {
-    return Group()
+    let fill = LinearGradient(degree: 90, from: Color(val: 0xff4704), to: Color(val: 0xff7404).with(a: 0.33))
+    let items = adjustedData.map { _ in Group() }
+    
+    animations = items.enumerated().map { (i: Int, item: Group) in
+      item.contentsVar.animation(delay: Double(i) * 0.1) { t in
+        let height = adjustedData[i] * t
+        let rect = Rect(x: Double(i) * 50 + 25, y: 200 - height, w: 30, h: height)
+        return [rect.fill(with: fill)]
+      }
+    }
+    return items.group()
+  }
+  
+  static func playAnimation() {
+    animations.combine().play()
   }
   
   private static func createDummyData() -> [SwiftNewsVideo] {

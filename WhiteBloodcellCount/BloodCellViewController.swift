@@ -15,8 +15,11 @@ class BloodCellViewController: UIViewController {
         super.viewDidLoad()
         chartView.contentMode = .scaleAspectFit
     
-        // Do any additional setup after loading the view.
+        MacawChartView.playAnimation()
     }
     
-
+  @IBAction func showViewBtnClicked(_ sender: Any) {
+    MacawChartView.playAnimation()
+  }
+  
 }
