@@ -7,4 +7,5 @@ target 'WhiteBloodcellCount' do
 
   # Pods for WhiteBloodcellCount
   pod "Macaw", "0.9.7"
+  pod "DKImagePickerController"
 end

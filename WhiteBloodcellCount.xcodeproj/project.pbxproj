@@ -19,6 +19,8 @@
 		70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */; };
 		70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA14C253BD29200190B0E /* Test.mlmodel */; };
 		70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA153253BDC7A00190B0E /* BloodCell.swift */; };
+		70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */; };
+		70BEA173253C243800190B0E /* WhiteBloodCellCount.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA172253C243800190B0E /* WhiteBloodCellCount.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNewsVideo.swift; sourceTree = "<group>"; };
 		70BEA14C253BD29200190B0E /* Test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Test.mlmodel; sourceTree = "<group>"; };
 		70BEA153253BDC7A00190B0E /* BloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCell.swift; sourceTree = "<group>"; };
+		70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
+		70BEA172253C243800190B0E /* WhiteBloodCellCount.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WhiteBloodCellCount.mlmodel; sourceTree = "<group>"; };
 		AC5AD7BFDC40879AE8C37E9D /* Pods_WhiteBloodcellCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhiteBloodcellCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D6A2487ABE610456FEA0CF /* Pods-WhiteBloodcellCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteBloodcellCount.debug.xcconfig"; path = "Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +94,7 @@
 		70213434253B4AE600B32752 /* WhiteBloodcellCount */ = {
 			isa = PBXGroup;
 			children = (
+				70BEA172253C243800190B0E /* WhiteBloodCellCount.mlmodel */,
 				70BEA14C253BD29200190B0E /* Test.mlmodel */,
 				70213435253B4AE600B32752 /* AppDelegate.swift */,
 				70213437253B4AE600B32752 /* SceneDelegate.swift */,
@@ -102,6 +107,7 @@
 				70213443253B4AE800B32752 /* Info.plist */,
 				7021344A253B514000B32752 /* BloodCellViewController.swift */,
 				70BEA153253BDC7A00190B0E /* BloodCell.swift */,
+				70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */,
 			);
 			path = WhiteBloodcellCount;
 			sourceTree = "<group>";
@@ -224,9 +230,11 @@
 				70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */,
 				70213453253B5A8200B32752 /* MacawChartView.swift in Sources */,
 				70213436253B4AE600B32752 /* AppDelegate.swift in Sources */,
+				70BEA173253C243800190B0E /* WhiteBloodCellCount.mlmodel in Sources */,
 				70213438253B4AE600B32752 /* SceneDelegate.swift in Sources */,
 				70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */,
 				70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */,
+				70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */,
 				7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

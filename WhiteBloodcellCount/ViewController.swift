@@ -89,20 +89,47 @@ class ViewController: UIViewController{
           let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
               self?.processClassifications(for: request, error: error)
           })
-          request.imageCropAndScaleOption = .centerCrop
+        //request.imageCropAndScaleOption = .centerCrop
           return request
       } catch {
           fatalError("Failed to load Vision ML model: \(error)")
       }
   }()
   
+  func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+    print("Image Size", image.size)
+    let size = image.size
+    let widthRatio = targetSize.width / size.width
+    let heightRatio = targetSize.height / size.height
+    
+    var newSize: CGSize
+    if (widthRatio > heightRatio) {
+      newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+    } else {
+      newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+    }
+    
+    let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+    
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+    image.draw(in: rect)
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return newImage!
+  }
+  
   /// - Tag: PerformRequests
   func updateClassifications(for image: UIImage) {
       //classificationLabel.text = "Classifying..."
       
-    let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))
-      guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
-      
+    let resized_image = image//self.resizeImage(image: image, targetSize: CGSize(width: 320, height: 240))
+    let orientation = CGImagePropertyOrientation(rawValue: UInt32(resized_image.imageOrientation.rawValue))
+    
+    print("Resize Image size helloo:", resized_image.size)
+      guard let ciImage = CIImage(image: resized_image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+    print("ci Image size:", ciImage)
+
       DispatchQueue.global(qos: .userInitiated).async {
           let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation!)
           do {
@@ -141,14 +168,17 @@ class ViewController: UIViewController{
                 
                  return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
               }
+            
             let data: [BloodCell] = [ BloodCell(name: "Eosinophil", amount: 1000),
                                       BloodCell(name: "Lymphocyte", amount: 40),
-                                      BloodCell(name: "Lymphocyte", amount: 700),
+                                      BloodCell(name: "Monocyte", amount: 700),
                                       BloodCell(name: "Neutrophil", amount: 300)]
             //set blood cell datas to render chart
             MacawChartView.setData(data);
             self.performSegue(withIdentifier: "chartViewSegue", sender: nil)
+        
             print("Classification label:", descriptions[0])
+            print(descriptions)
             print("Classification successfully")
 //              self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
           }

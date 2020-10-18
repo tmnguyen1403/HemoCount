@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SwJ-it-xYs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4yt-zX-NcM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,36 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="611-VL-HWp">
-                                <rect key="frame" x="27" y="105" width="86" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qJ-3u-DAP">
+                                <rect key="frame" x="19" y="475" width="146" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload Images">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="camera.viewfinder" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZo-la-s8x"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-vb-1wK">
+                                <rect key="frame" x="10" y="263" width="394" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="9I0-kH-XWs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HemoCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-Dc-PVx">
+                                <rect key="frame" x="174" y="126" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-vb-1wK">
-                                <rect key="frame" x="27" y="168" width="367" height="186"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxz-f9-S5k">
-                                <rect key="frame" x="150" y="456" width="115" height="30"/>
+                                <rect key="frame" x="229" y="475" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Count Blood Cell"/>
                                 <connections>
                                     <action selector="countBloodCellClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BeG-ge-dxg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qJ-3u-DAP">
-                                <rect key="frame" x="158" y="391" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose Image"/>
-                                <connections>
-                                    <action selector="takePicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZo-la-s8x"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ci-vb-1wK" secondAttribute="trailing" constant="10" id="NDd-yr-0lQ"/>
+                            <constraint firstItem="4ci-vb-1wK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iRA-t3-OOR"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dSk-49-Mdg"/>
@@ -58,28 +69,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="32"/>
+            <point key="canvasLocation" x="1015.9420289855074" y="31.473214285714285"/>
+        </scene>
+        <!--Multiple Images View Controller-->
+        <scene sceneID="KSA-Un-dlP">
+            <objects>
+                <viewController id="4yt-zX-NcM" customClass="MultipleImagesViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXw-9V-Nnw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fFf-ce-5m9">
+                                <rect key="frame" x="10" y="64" width="394" height="560"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSA-be-2uP">
+                                <rect key="frame" x="150" y="644" width="114" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Upload Images">
+                                    <color key="titleColor" systemColor="systemGray5Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="sekectImagesClicked:" destination="4yt-zX-NcM" eventType="touchUpInside" id="udm-6Q-Xvd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0df-i0-g3S"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="fFf-ce-5m9" secondAttribute="trailing" constant="10" id="2Fn-pD-VYG"/>
+                            <constraint firstItem="fFf-ce-5m9" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="3mU-kd-49d"/>
+                            <constraint firstItem="bSA-be-2uP" firstAttribute="top" secondItem="fFf-ce-5m9" secondAttribute="bottom" constant="20" id="Drg-8v-jnj"/>
+                            <constraint firstItem="fFf-ce-5m9" firstAttribute="top" secondItem="0df-i0-g3S" secondAttribute="top" constant="20" id="M5H-ge-r4q"/>
+                            <constraint firstItem="bSA-be-2uP" firstAttribute="centerX" secondItem="gXw-9V-Nnw" secondAttribute="centerX" id="cRj-KI-GFn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="8r7-t4-JI6" kind="show" identifier="showBarChartSegue" id="OKv-2p-Hd1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vj-OM-MwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950.7246376811595" y="137.94642857142856"/>
         </scene>
         <!--Blood Cell View Controller-->
         <scene sceneID="c3a-5h-a8h">
             <objects>
                 <viewController id="RxH-Ui-EUc" customClass="BloodCellViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zan-rr-sdn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Cell Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noN-af-tcQ">
+                                <rect key="frame" x="143" y="610" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-lZ-BRr" customClass="MacawChartView" customModule="WhiteBloodcellCount" customModuleProvider="target">
-                                <rect key="frame" x="10" y="118" width="394" height="724"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="66" width="414" height="534"/>
+                                <color key="backgroundColor" red="0.17259738869863014" green="0.4438316293983347" blue="0.91869890293446144" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SGj-7x-0e4"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="SGj-7x-0e4" firstAttribute="trailing" secondItem="hvt-lZ-BRr" secondAttribute="trailing" constant="10" id="Dd5-HO-V6y"/>
-                            <constraint firstItem="hvt-lZ-BRr" firstAttribute="top" secondItem="SGj-7x-0e4" secondAttribute="top" constant="30" id="i1H-5M-Fel"/>
-                            <constraint firstItem="hvt-lZ-BRr" firstAttribute="leading" secondItem="SGj-7x-0e4" secondAttribute="leading" constant="10" id="sCf-Qw-bdq"/>
-                            <constraint firstItem="SGj-7x-0e4" firstAttribute="bottom" secondItem="hvt-lZ-BRr" secondAttribute="bottom" constant="20" id="zPS-IE-Pqx"/>
+                            <constraint firstItem="hvt-lZ-BRr" firstAttribute="top" secondItem="SGj-7x-0e4" secondAttribute="top" constant="10" id="2qU-mi-guW"/>
+                            <constraint firstItem="hvt-lZ-BRr" firstAttribute="leading" secondItem="SGj-7x-0e4" secondAttribute="leading" id="3o3-CY-3I2"/>
+                            <constraint firstItem="noN-af-tcQ" firstAttribute="centerX" secondItem="Zan-rr-sdn" secondAttribute="centerX" id="CEh-ne-VeH"/>
+                            <constraint firstAttribute="bottom" secondItem="hvt-lZ-BRr" secondAttribute="bottom" constant="242" id="WXT-qM-guf"/>
+                            <constraint firstItem="noN-af-tcQ" firstAttribute="top" secondItem="hvt-lZ-BRr" secondAttribute="bottom" constant="10" id="ZlE-9U-5wU"/>
+                            <constraint firstItem="hvt-lZ-BRr" firstAttribute="trailing" secondItem="SGj-7x-0e4" secondAttribute="trailing" id="mDo-Y3-Qt6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iCM-cD-0HI"/>
@@ -90,57 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUc-7D-jP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="793.52678571428567"/>
-        </scene>
-        <!--Blood Cell View Controller-->
-        <scene sceneID="9gb-Mh-6f2">
-            <objects>
-                <viewController id="Zx1-Ti-Izq" customClass="BloodCellViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jJF-ub-TcB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03o-g6-Ajt">
-                                <rect key="frame" x="165" y="161" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx6-Nx-wfi">
-                                <rect key="frame" x="165" y="255" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fIB-mH-pyV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="4iZ-pU-5mf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z1g-xc-O4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2789.8550724637685" y="103.79464285714285"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QZT-jv-8gR">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m31-dT-3eH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="qh2-Zc-u1N"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mVV-Zp-056">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Zx1-Ti-Izq" kind="relationship" relationship="rootViewController" id="OGp-RL-IEj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X1c-fr-hRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1879.7101449275365" y="103.79464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tps-0m-wFD">
@@ -167,7 +176,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1RM-gS-R84"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OY7-df-b9G">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -180,12 +189,27 @@
             <point key="canvasLocation" x="105.79710144927537" y="793.52678571428567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OKv-2p-Hd1"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="icon" width="960" height="540"/>
+        <image name="logo" width="934" height="560"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -48,7 +48,7 @@ class MacawChartView: MacawView {
       let y = yAxisHeight - (Double(i) * lineSpacing)
       
       let valueLine = Line(x1: -5, y1: y, x2: lineWidth, y2: y).stroke(fill: Color.white.with(a: 0.10))
-      let valueText = Text(text: "\(i * lineInterval)", align: .max, baseline: .mid, place: .move(dx: -10, dy: y))
+      let valueText = Text(text: "\(i * lineInterval / 10)", align: .max, baseline: .mid, place: .move(dx: -10, dy: y))
       valueText.fill = Color.white
       
       newNodes.append(valueLine)
@@ -71,7 +71,7 @@ class MacawChartView: MacawView {
       nameText.fill = Color.white
       newNodes.append(nameText)
       
-      let valueText = Text(text: "\(lastFiveShows[i-1].amount)", align: .max, baseline: .mid, place: .move(dx: x - 40, dy: chartBaseY - adjustedData[i-1] - 10.0))
+      let valueText = Text(text: "\(Int(lastFiveShows[i-1].amount))", align: .max, baseline: .mid, place: .move(dx: x - 55, dy: chartBaseY - adjustedData[i-1]*10 - 10.0))
       valueText.fill = Color.white
       newNodes.append(valueText)
     }
@@ -83,13 +83,13 @@ class MacawChartView: MacawView {
   }
   
   private static func createBars() -> Group {
-    let fill = LinearGradient(degree: 90, from: Color(val: 0xff4704), to: Color(val: 0xff7404).with(a: 0.33))
+    let fill = LinearGradient(degree: 90, from: Color(val: 0x2C71EA), to: Color(val: 0x2C71EA).with(a: 0.33))
     let items = adjustedData.map { _ in Group() }
     
     animations = items.enumerated().map { (i: Int, item: Group) in
       item.contentsVar.animation(delay: Double(i) * 0.1) { t in
         let height = adjustedData[i] * t
-        let rect = Rect(x: Double(i) * 100 + 25, y: 300 - height, w: 30, h: height)
+        let rect = Rect(x: Double(i) * 100 + 25, y: 300 - height * 10, w: 30, h: height * 10)
         return [rect.fill(with: fill)]
       }
     }
