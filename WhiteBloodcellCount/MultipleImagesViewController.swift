@@ -31,7 +31,7 @@ class MultipleImagesViewController: UIViewController, DKImageAssetExporterObserv
         let data = [ BloodCell(name: "Eosinophil", amount: 13),
                                  BloodCell(name: "Lymphocyte", amount: 6),
                                  BloodCell(name: "Monocyte", amount: 4),
-                                 BloodCell(name: "Neutrophil", amount: 49)]
+                                 BloodCell(name: "Neutrophil", amount: 10)]
         MacawChartView.setData(data);
        
         self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
