@@ -17,6 +17,7 @@
 		7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021344A253B514000B32752 /* BloodCellViewController.swift */; };
 		70213453253B5A8200B32752 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213452253B5A8200B32752 /* MacawChartView.swift */; };
 		70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */; };
+		70A28D6F253C7FF90006A1F7 /* WhiteBloodCellCountFinal.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70A28D6E253C7FF80006A1F7 /* WhiteBloodCellCountFinal.mlmodel */; };
 		70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA14C253BD29200190B0E /* Test.mlmodel */; };
 		70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA153253BDC7A00190B0E /* BloodCell.swift */; };
 		70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */; };
@@ -36,6 +37,7 @@
 		7021344A253B514000B32752 /* BloodCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellViewController.swift; sourceTree = "<group>"; };
 		70213452253B5A8200B32752 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
 		70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNewsVideo.swift; sourceTree = "<group>"; };
+		70A28D6E253C7FF80006A1F7 /* WhiteBloodCellCountFinal.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WhiteBloodCellCountFinal.mlmodel; sourceTree = "<group>"; };
 		70BEA14C253BD29200190B0E /* Test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Test.mlmodel; sourceTree = "<group>"; };
 		70BEA153253BDC7A00190B0E /* BloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCell.swift; sourceTree = "<group>"; };
 		70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		70213434253B4AE600B32752 /* WhiteBloodcellCount */ = {
 			isa = PBXGroup;
 			children = (
+				70A28D6E253C7FF80006A1F7 /* WhiteBloodCellCountFinal.mlmodel */,
 				70BEA172253C243800190B0E /* WhiteBloodCellCount.mlmodel */,
 				70BEA14C253BD29200190B0E /* Test.mlmodel */,
 				70213435253B4AE600B32752 /* AppDelegate.swift */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7021343A253B4AE600B32752 /* ViewController.swift in Sources */,
+				70A28D6F253C7FF90006A1F7 /* WhiteBloodCellCountFinal.mlmodel in Sources */,
 				70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */,
 				70213453253B5A8200B32752 /* MacawChartView.swift in Sources */,
 				70213436253B4AE600B32752 /* AppDelegate.swift in Sources */,
