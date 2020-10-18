@@ -10,18 +10,23 @@ import Macaw
 
 class MacawChartView: MacawView {
   
-  static let lastFiveShows      = createDummyData()
-  static let maxValue           = 6000
-  static let maxValueLineHeight = 180
-  static let lineWidth: Double  = 275
+  static var lastFiveShows      = createDummyData()
+  static let maxValue           = 1200
+  static let maxValueLineHeight = 300
+  static let lineWidth: Double  = 400
   
   static let dataDivisor        = Double(maxValue/maxValueLineHeight)
-  static let adjustedData: [Double] = lastFiveShows.map({$0.videoCount / dataDivisor})
+  static let adjustedData: [Double] = lastFiveShows.map({$0.amount / dataDivisor})
   static var animations: [Animation] = []
   
   required init?(coder aDecoder: NSCoder) {
     super.init(node: MacawChartView.createChart(), coder: aDecoder)
     backgroundColor = .clear
+  }
+  
+  public static func setData(_ data : [BloodCell]) {
+    print("Called set Data")
+    lastFiveShows = data
   }
   
   private static func createChart() -> Group {
@@ -32,14 +37,14 @@ class MacawChartView: MacawView {
   }
   
   private static func addYAxisItems() -> [Node] {
-    let maxLines = 6
+    let maxLines = 10
     let lineInterval = Int(maxValue/maxLines)
-    let yAxisHeight: Double = 200
+    let yAxisHeight: Double = 300
     let lineSpacing: Double = 30
     
     var newNodes: [Node] = []
     
-    for i in 1...maxLines {
+    for i in 0...maxLines {
       let y = yAxisHeight - (Double(i) * lineSpacing)
       
       let valueLine = Line(x1: -5, y1: y, x2: lineWidth, y2: y).stroke(fill: Color.white.with(a: 0.10))
@@ -57,12 +62,16 @@ class MacawChartView: MacawView {
   }
   
   private static func addXAxisItems() -> [Node] {
-    let chartBaseY: Double = 200
+    let chartBaseY: Double = 300
     var newNodes: [Node] = []
     
     for i in 1...adjustedData.count {
-      let x = (Double(i) * 50)
-      let valueText = Text(text: lastFiveShows[i-1].showNumber, align: .max, baseline: .mid, place: .move(dx: x, dy: chartBaseY + 15))
+      let x = (Double(i) * 100)
+      let nameText = Text(text: (lastFiveShows[i-1].name), align: .max, baseline: .mid, place: .move(dx: x - 25, dy: chartBaseY + 15))
+      nameText.fill = Color.white
+      newNodes.append(nameText)
+      
+      let valueText = Text(text: "\(lastFiveShows[i-1].amount)", align: .max, baseline: .mid, place: .move(dx: x - 40, dy: chartBaseY - adjustedData[i-1] - 10.0))
       valueText.fill = Color.white
       newNodes.append(valueText)
     }
@@ -80,7 +89,7 @@ class MacawChartView: MacawView {
     animations = items.enumerated().map { (i: Int, item: Group) in
       item.contentsVar.animation(delay: Double(i) * 0.1) { t in
         let height = adjustedData[i] * t
-        let rect = Rect(x: Double(i) * 50 + 25, y: 200 - height, w: 30, h: height)
+        let rect = Rect(x: Double(i) * 100 + 25, y: 300 - height, w: 30, h: height)
         return [rect.fill(with: fill)]
       }
     }
@@ -91,15 +100,18 @@ class MacawChartView: MacawView {
     animations.combine().play()
   }
   
-  private static func createDummyData() -> [SwiftNewsVideo] {
-    let one = SwiftNewsVideo(showNumber: "55", videoCount: 3456)
-    let two = SwiftNewsVideo(showNumber: "56", videoCount: 5000)
-    let three = SwiftNewsVideo(showNumber: "57", videoCount: 5500)
+  private static func createDummyData() -> [BloodCell] {
+    let one = BloodCell(name: "Eosinophil", amount: 522)
+    let two = BloodCell(name: "Lymphocyte", amount: 620)
+    let three = BloodCell(name: "Lymphocyte", amount: 456)
+    let four = BloodCell(name: "Neutrophil", amount: 568)
     
-    return [one, two, three]
+    return [one, two, three, four]
   }
 }
 /*
  *Data to visualize:
  *blood cell names - percentage : [Basophil, Eosinophil, Lymphocyte, Monocyte, Neutrophil] - [5,10,20,30,40]
  */
+
+
