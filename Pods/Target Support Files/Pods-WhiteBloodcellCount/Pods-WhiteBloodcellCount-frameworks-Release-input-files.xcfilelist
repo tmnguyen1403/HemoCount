@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework
 ${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework
 ${BUILT_PRODUCTS_DIR}/DKCamera/DKCamera.framework
 ${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework
