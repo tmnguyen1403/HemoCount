@@ -1,6 +1,6 @@
 ## Demo Hemocount
 
-![Demo](./Gif/demo3.gif)
+![Demo](./Gif/demo4.gif)
 
 ## Inspiration
 The sudden and rapid growth of COVID-19 cases is overwhelming health systems globally. Fast, accurate and early detection of SARS-CoV-2 is of vital importance to control the spread of the virus. However, traditional SARS-CoV-2 detection based on RT-PCR assays can be costly, long-drawn-out and widely unavailable making testing every case an impractical effort. From an analysis on 5644 patients (with 558 tested positive for SARS-CoV-2) from the Hospital Israelita Albert Einstein in São Paulo, Brazil, the result shows that  that patients admitted with COVID-19 symptoms who tested negative for Rhinovirus Enterovirus, Influenza B and Inf.A.H1N1.2009 and presented low levels of Leukocytes and Platelets were more likely to test positive for SARS-CoV-2. (Souza, 2020) In this work, we propose a deep learning-based approach for the rapid detection of COVID-19 cases using commonly available laboratory data of thin blood smears to count the number of Leukocytes and Platelets. Due to time constraint for this Datathon, we are only able to finish the deep learning model to count Leukocytes or white blood cells (WBC). 
