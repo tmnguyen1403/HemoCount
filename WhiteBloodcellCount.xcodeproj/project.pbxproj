@@ -20,6 +20,9 @@
 		70B2BCC6254DBE110084F6CD /* BloodTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */; };
 		70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */; };
 		70B2BCCC254DC4DF0084F6CD /* SelectedAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */; };
+		70B2BCCF254E03DE0084F6CD /* LymphocyteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */; };
+		70B2BCD4254E04E60084F6CD /* MonocyteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */; };
+		70B2BCD7254E04F40084F6CD /* NeutrophilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */; };
 		70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA14C253BD29200190B0E /* Test.mlmodel */; };
 		70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA153253BDC7A00190B0E /* BloodCell.swift */; };
 		70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */; };
@@ -43,6 +46,9 @@
 		70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTypeViewController.swift; sourceTree = "<group>"; };
 		70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTableCell.swift; sourceTree = "<group>"; };
 		70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAssets.swift; sourceTree = "<group>"; };
+		70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LymphocyteViewController.swift; sourceTree = "<group>"; };
+		70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonocyteViewController.swift; sourceTree = "<group>"; };
+		70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeutrophilViewController.swift; sourceTree = "<group>"; };
 		70BEA14C253BD29200190B0E /* Test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Test.mlmodel; sourceTree = "<group>"; };
 		70BEA153253BDC7A00190B0E /* BloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCell.swift; sourceTree = "<group>"; };
 		70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		70213434253B4AE600B32752 /* WhiteBloodcellCount */ = {
 			isa = PBXGroup;
 			children = (
+				70B2BCD1254E03E70084F6CD /* BloodTypeControllers */,
 				70D3C54B253D25F400F853E8 /* WhiteBloodCellCount.mlmodel */,
 				70D3C548253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel */,
 				70BEA14C253BD29200190B0E /* Test.mlmodel */,
@@ -109,7 +116,6 @@
 				70213437253B4AE600B32752 /* SceneDelegate.swift */,
 				70213439253B4AE600B32752 /* ViewController.swift */,
 				7021343B253B4AE600B32752 /* Main.storyboard */,
-				70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */,
 				70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */,
 				70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */,
 				70213452253B5A8200B32752 /* MacawChartView.swift */,
@@ -122,6 +128,17 @@
 				70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */,
 			);
 			path = WhiteBloodcellCount;
+			sourceTree = "<group>";
+		};
+		70B2BCD1254E03E70084F6CD /* BloodTypeControllers */ = {
+			isa = PBXGroup;
+			children = (
+				70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */,
+				70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */,
+				70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */,
+				70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */,
+			);
+			path = BloodTypeControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,16 +259,19 @@
 				70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */,
 				70D3C549253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel in Sources */,
 				70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */,
+				70B2BCD4254E04E60084F6CD /* MonocyteViewController.swift in Sources */,
 				70213453253B5A8200B32752 /* MacawChartView.swift in Sources */,
 				70213436253B4AE600B32752 /* AppDelegate.swift in Sources */,
 				70D3C54C253D25F400F853E8 /* WhiteBloodCellCount.mlmodel in Sources */,
 				70B2BCCC254DC4DF0084F6CD /* SelectedAssets.swift in Sources */,
 				70213438253B4AE600B32752 /* SceneDelegate.swift in Sources */,
 				70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */,
+				70B2BCCF254E03DE0084F6CD /* LymphocyteViewController.swift in Sources */,
 				70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */,
 				70B2BCC6254DBE110084F6CD /* BloodTypeViewController.swift in Sources */,
 				70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */,
 				7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */,
+				70B2BCD7254E04F40084F6CD /* NeutrophilViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

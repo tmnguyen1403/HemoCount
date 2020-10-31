@@ -57,6 +57,11 @@ class MultipleImagesViewController: UIViewController{
       SelectedAssets.lymphocyte = self.selectedImages
       SelectedAssets.monocyte = self.selectedImages
       SelectedAssets.neutrophil = self.selectedImages
+      
+      //print id
+      for asset in selectedImages {
+        print("id: \(asset.localIdentifier)")
+      }
       //
       
       print("assetID: \(selectedImages[0].localIdentifier)")

@@ -395,10 +395,10 @@
             </objects>
             <point key="canvasLocation" x="4085.507246376812" y="-1031.25"/>
         </scene>
-        <!--Eosinophil-->
+        <!--Lymphocyte-->
         <scene sceneID="VYm-ZI-oEh">
             <objects>
-                <viewController title="Eosinophil" id="vDd-xX-D4r" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lymphocyte" id="vDd-xX-D4r" customClass="LymphocyteViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8n-4D-eij">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,17 +449,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Lymphocyte" id="8kz-sV-sIP"/>
                     <connections>
-                        <outlet property="tableView" destination="94B-6v-py6" id="U15-Ro-RD2"/>
+                        <outlet property="tableView" destination="94B-6v-py6" id="dTz-sT-4Hw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25g-ZQ-9Jn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2409" y="1529"/>
         </scene>
-        <!--Eosinophil-->
+        <!--Monocyte-->
         <scene sceneID="BKP-vn-Do2">
             <objects>
-                <viewController title="Eosinophil" id="1eo-TL-T1T" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Monocyte" id="1eo-TL-T1T" customClass="MonocyteViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="goI-Mf-hOQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,17 +510,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Monocyte" id="cH9-gx-hTt"/>
                     <connections>
-                        <outlet property="tableView" destination="FfB-vE-TQi" id="nBP-PA-1We"/>
+                        <outlet property="tableView" destination="FfB-vE-TQi" id="2uw-Z8-OHq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpj-Fu-ded" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3159" y="1529"/>
         </scene>
-        <!--Eosinophil-->
+        <!--Neutrophil-->
         <scene sceneID="GxR-2O-CFF">
             <objects>
-                <viewController title="Eosinophil" id="4ee-3b-59u" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Neutrophil" id="4ee-3b-59u" customClass="NeutrophilViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bxV-HT-6YD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -571,7 +571,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Neutrophil" id="iYx-E0-FJ3"/>
                     <connections>
-                        <outlet property="tableView" destination="Aja-9T-n2H" id="4mv-hm-Lgf"/>
+                        <outlet property="tableView" destination="Aja-9T-n2H" id="erW-NY-PfO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nf2-Kw-rcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
