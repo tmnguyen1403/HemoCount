@@ -90,7 +90,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="sekectImagesClicked:" destination="4yt-zX-NcM" eventType="touchUpInside" id="udm-6Q-Xvd"/>
+                                    <action selector="onSelectImages:" destination="4yt-zX-NcM" eventType="touchUpInside" id="doJ-fC-LiQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuH-k3-RL6">
@@ -118,12 +118,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="l1c-yB-mVE"/>
                     <connections>
+                        <outlet property="countBloodCellButton" destination="YuH-k3-RL6" id="Gjj-a5-jxu"/>
                         <segue destination="RxH-Ui-EUc" kind="show" identifier="showBarChartSegue" id="O3Q-F4-H6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vj-OM-MwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="-494"/>
+            <point key="canvasLocation" x="1614" y="-467"/>
         </scene>
         <!--Chart-->
         <scene sceneID="c3a-5h-a8h">
@@ -145,9 +146,9 @@
                                 <color key="backgroundColor" red="0.17259738869863014" green="0.4438316293983347" blue="0.91869890293446144" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-Qu-Tqw">
-                                <rect key="frame" x="184" y="775" width="46" height="30"/>
+                                <rect key="frame" x="165" y="775" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="View Details"/>
                                 <connections>
                                     <segue destination="e6N-wS-tes" kind="show" id="NWD-ol-aYG"/>
                                 </connections>
@@ -176,55 +177,66 @@
             </objects>
             <point key="canvasLocation" x="2445" y="125"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="B63-aN-hTm">
-            <objects>
-                <viewController id="DVB-CZ-cbz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uz9-RK-9pH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ddv-EN-Ahy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="c70-dw-UJX" userLabel="Item 3"/>
-                    <navigationItem key="navigationItem" id="2lu-Jf-wb7"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oWi-YP-ELB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3814" y="1607"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="bBj-jc-3mR">
-            <objects>
-                <viewController id="r5a-mC-9tD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yw7-57-FUj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="T3e-Ws-fbr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="JcY-G5-u1G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n31-e0-G8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2774" y="1550"/>
-        </scene>
-        <!--Item 1-->
+        <!--Eosinophil-->
         <scene sceneID="X9g-Wr-DmF">
             <objects>
-                <viewController id="lwu-ad-zCr" sceneMemberID="viewController">
+                <viewController title="Eosinophil" id="lwu-ad-zCr" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssx-V1-vXe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-bN-0of">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BloodTableCell" rowHeight="238" id="IZl-t2-mSz" customClass="BloodTableCell" customModule="WhiteBloodcellCount" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="238"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZl-t2-mSz" id="AjK-HS-iUf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lv-nQ-w0Q">
+                                                    <rect key="frame" x="177.5" y="186" width="59" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="abm-HH-zFl">
+                                                    <rect key="frame" x="30" y="21" width="354" height="155"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="abm-HH-zFl" secondAttribute="height" multiplier="354:155" id="Pcc-rf-ici"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="abm-HH-zFl" secondAttribute="trailing" constant="10" id="8gG-ak-aNB"/>
+                                                <constraint firstItem="abm-HH-zFl" firstAttribute="leading" secondItem="AjK-HS-iUf" secondAttribute="leadingMargin" constant="10" id="v0Z-mF-HJz"/>
+                                                <constraint firstItem="abm-HH-zFl" firstAttribute="top" secondItem="AjK-HS-iUf" secondAttribute="topMargin" constant="10" id="w5n-aL-aHS"/>
+                                                <constraint firstItem="4Lv-nQ-w0Q" firstAttribute="top" secondItem="abm-HH-zFl" secondAttribute="bottom" constant="10" id="wjw-hN-ofU"/>
+                                                <constraint firstItem="4Lv-nQ-w0Q" firstAttribute="centerX" secondItem="AjK-HS-iUf" secondAttribute="centerX" id="wqL-O3-HhD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bloodImageView" destination="abm-HH-zFl" id="W24-Bt-7X4"/>
+                                            <outlet property="imageLabel" destination="4Lv-nQ-w0Q" id="X6W-ar-b6z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zro-Gj-VvX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="2YM-PM-E1i"/>
+                    <tabBarItem key="tabBarItem" title="Eosinophil" id="2YM-PM-E1i"/>
+                    <connections>
+                        <outlet property="tableView" destination="bTg-bN-0of" id="MUo-MI-Q5o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l61-0n-5Yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="1530"/>
+            <point key="canvasLocation" x="1547.8260869565217" y="1529.4642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nOx-XK-1Jj">
@@ -238,8 +250,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="lwu-ad-zCr" kind="relationship" relationship="viewControllers" id="U7N-Hk-Ab9"/>
-                        <segue destination="r5a-mC-9tD" kind="relationship" relationship="viewControllers" id="lEK-pp-uGE"/>
-                        <segue destination="DVB-CZ-cbz" kind="relationship" relationship="viewControllers" id="BBK-Nm-I2u"/>
+                        <segue destination="vDd-xX-D4r" kind="relationship" relationship="viewControllers" id="7oi-j6-HZc"/>
+                        <segue destination="1eo-TL-T1T" kind="relationship" relationship="viewControllers" id="AtG-Zu-lc7"/>
+                        <segue destination="4ee-3b-59u" kind="relationship" relationship="viewControllers" id="qd0-WE-m5c"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t06-Ro-sOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -262,7 +275,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuc-b3-3UC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-102"/>
+            <point key="canvasLocation" x="-416" y="-34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bmd-vu-hsp">
@@ -300,6 +313,189 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZC-Re-D8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3233" y="-1085"/>
+        </scene>
+        <!--Eosinophil-->
+        <scene sceneID="VYm-ZI-oEh">
+            <objects>
+                <viewController title="Eosinophil" id="vDd-xX-D4r" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c8n-4D-eij">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="94B-6v-py6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BloodTableCell" rowHeight="238" id="mom-gA-VPy" customClass="BloodTableCell" customModule="WhiteBloodcellCount" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="238"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mom-gA-VPy" id="IpS-GF-wpl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-2h-etG">
+                                                    <rect key="frame" x="177.5" y="186" width="59" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QDC-6l-oX7">
+                                                    <rect key="frame" x="30" y="21" width="354" height="155"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="QDC-6l-oX7" secondAttribute="height" multiplier="354:155" id="Ojk-dZ-HFp"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QDC-6l-oX7" secondAttribute="trailing" constant="10" id="QPD-v0-eHr"/>
+                                                <constraint firstItem="QDC-6l-oX7" firstAttribute="leading" secondItem="IpS-GF-wpl" secondAttribute="leadingMargin" constant="10" id="W8V-5e-a0a"/>
+                                                <constraint firstItem="MFq-2h-etG" firstAttribute="centerX" secondItem="IpS-GF-wpl" secondAttribute="centerX" id="Ymj-hO-UqK"/>
+                                                <constraint firstItem="QDC-6l-oX7" firstAttribute="top" secondItem="IpS-GF-wpl" secondAttribute="topMargin" constant="10" id="aEW-tf-XMo"/>
+                                                <constraint firstItem="MFq-2h-etG" firstAttribute="top" secondItem="QDC-6l-oX7" secondAttribute="bottom" constant="10" id="znI-r8-oGB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bloodImageView" destination="QDC-6l-oX7" id="u9G-us-ylo"/>
+                                            <outlet property="imageLabel" destination="MFq-2h-etG" id="fCi-up-VXh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HbK-Jb-Nyt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Lymphocyte" id="8kz-sV-sIP"/>
+                    <connections>
+                        <outlet property="tableView" destination="94B-6v-py6" id="U15-Ro-RD2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25g-ZQ-9Jn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="1529"/>
+        </scene>
+        <!--Eosinophil-->
+        <scene sceneID="BKP-vn-Do2">
+            <objects>
+                <viewController title="Eosinophil" id="1eo-TL-T1T" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="goI-Mf-hOQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-vE-TQi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BloodTableCell" rowHeight="238" id="Pt4-Z6-shS" customClass="BloodTableCell" customModule="WhiteBloodcellCount" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="238"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pt4-Z6-shS" id="dFX-GK-X8V">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3l7-7t-i48">
+                                                    <rect key="frame" x="177.5" y="186" width="59" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-g1-FuS">
+                                                    <rect key="frame" x="30" y="21" width="354" height="155"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="cdH-g1-FuS" secondAttribute="height" multiplier="354:155" id="E9O-5X-pkl"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3l7-7t-i48" firstAttribute="centerX" secondItem="dFX-GK-X8V" secondAttribute="centerX" id="CHD-4b-7qc"/>
+                                                <constraint firstItem="cdH-g1-FuS" firstAttribute="top" secondItem="dFX-GK-X8V" secondAttribute="topMargin" constant="10" id="DV1-b7-bea"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cdH-g1-FuS" secondAttribute="trailing" constant="10" id="JNQ-5P-Wxg"/>
+                                                <constraint firstItem="cdH-g1-FuS" firstAttribute="leading" secondItem="dFX-GK-X8V" secondAttribute="leadingMargin" constant="10" id="aIT-Ev-c8f"/>
+                                                <constraint firstItem="3l7-7t-i48" firstAttribute="top" secondItem="cdH-g1-FuS" secondAttribute="bottom" constant="10" id="jec-tB-5Q0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bloodImageView" destination="cdH-g1-FuS" id="hRM-KN-mSM"/>
+                                            <outlet property="imageLabel" destination="3l7-7t-i48" id="K4R-bK-HvY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9C6-x3-h0o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Monocyte" id="cH9-gx-hTt"/>
+                    <connections>
+                        <outlet property="tableView" destination="FfB-vE-TQi" id="nBP-PA-1We"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpj-Fu-ded" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3159" y="1529"/>
+        </scene>
+        <!--Eosinophil-->
+        <scene sceneID="GxR-2O-CFF">
+            <objects>
+                <viewController title="Eosinophil" id="4ee-3b-59u" customClass="BloodTypeViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bxV-HT-6YD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aja-9T-n2H">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BloodTableCell" rowHeight="238" id="vDb-Oj-aSp" customClass="BloodTableCell" customModule="WhiteBloodcellCount" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="238"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vDb-Oj-aSp" id="weK-eR-N9A">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSl-hv-5SB">
+                                                    <rect key="frame" x="177.5" y="186" width="59" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-uu-Ptt">
+                                                    <rect key="frame" x="30" y="21" width="354" height="155"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="kCA-uu-Ptt" secondAttribute="height" multiplier="354:155" id="GMN-h3-b3V"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kCA-uu-Ptt" secondAttribute="trailing" constant="10" id="ZIP-md-59k"/>
+                                                <constraint firstItem="YSl-hv-5SB" firstAttribute="centerX" secondItem="weK-eR-N9A" secondAttribute="centerX" id="bMP-LF-EXf"/>
+                                                <constraint firstItem="kCA-uu-Ptt" firstAttribute="leading" secondItem="weK-eR-N9A" secondAttribute="leadingMargin" constant="10" id="f6G-Ja-gj5"/>
+                                                <constraint firstItem="YSl-hv-5SB" firstAttribute="top" secondItem="kCA-uu-Ptt" secondAttribute="bottom" constant="10" id="qK8-6F-pgO"/>
+                                                <constraint firstItem="kCA-uu-Ptt" firstAttribute="top" secondItem="weK-eR-N9A" secondAttribute="topMargin" constant="10" id="ynI-jQ-dDc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bloodImageView" destination="kCA-uu-Ptt" id="gfa-xt-DxC"/>
+                                            <outlet property="imageLabel" destination="YSl-hv-5SB" id="srZ-Zo-x5T"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JET-Un-gQu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Neutrophil" id="iYx-E0-FJ3"/>
+                    <connections>
+                        <outlet property="tableView" destination="Aja-9T-n2H" id="4mv-hm-Lgf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nf2-Kw-rcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3922" y="1529"/>
         </scene>
     </scenes>
     <resources>

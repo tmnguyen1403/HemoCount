@@ -14,8 +14,12 @@ class MultipleImagesViewController: UIViewController{
   var selectedImages : [PHAsset]!
   let imagePicker = ImagePickerController()
   
+  @IBOutlet weak var countBloodCellButton: UIButton!
   override func viewDidLoad() {
         super.viewDidLoad()
+//    countBloodCellButton.isEnabled = false
+//    countBloodCellButton.backgroundColor = UIColor.gray
+    selectedImages = []
     //setup for imagePicker
     imagePicker.settings.theme.selectionStyle = .numbered
     imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
@@ -24,7 +28,7 @@ class MultipleImagesViewController: UIViewController{
     //closures for imagePicker
   }
     
-  @IBAction func sekectImagesClicked(_ sender: Any) {
+  @IBAction func onSelectImages(_ sender: Any) {
     let start = Date()
     self.presentImagePicker(imagePicker, select: { (asset) in
         print("Selected: \(asset)")
@@ -36,6 +40,7 @@ class MultipleImagesViewController: UIViewController{
       print("Finished with selections: \(assets.count) images")
         //let asset = assets[0]
       self.selectedImages = assets
+      self.countBloodCellButton.isEnabled = true
     }, completion: {
         let finish = Date()
         print("Finish \(finish.timeIntervalSince(start))")
@@ -45,12 +50,23 @@ class MultipleImagesViewController: UIViewController{
   }
   
   @IBAction func onCountBloodCell(_ sender: Any) {
-    let data = [ BloodCell(name: "Eosinophil", amount: 13),
-                             BloodCell(name: "Lymphocyte", amount: 6),
-                             BloodCell(name: "Monocyte", amount: 4),
-                             BloodCell(name: "Neutrophil", amount: 10)]
-    MacawChartView.setData(data);
-   
-    self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
+    print("clicked button")
+    if selectedImages.count > 0 {
+      //assgined assets to render
+      SelectedAssets.eosinophil = self.selectedImages
+      SelectedAssets.lymphocyte = self.selectedImages
+      SelectedAssets.monocyte = self.selectedImages
+      SelectedAssets.neutrophil = self.selectedImages
+      //
+      
+      print("assetID: \(selectedImages[0].localIdentifier)")
+      let data = [ BloodCell(name: "Eosinophil", amount: 13),
+                               BloodCell(name: "Lymphocyte", amount: 6),
+                               BloodCell(name: "Monocyte", amount: 4),
+                               BloodCell(name: "Neutrophil", amount: 10)]
+      MacawChartView.setData(data);
+      
+      self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
+    }
   }
 }

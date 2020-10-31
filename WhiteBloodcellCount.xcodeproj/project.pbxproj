@@ -17,6 +17,9 @@
 		7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021344A253B514000B32752 /* BloodCellViewController.swift */; };
 		70213453253B5A8200B32752 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213452253B5A8200B32752 /* MacawChartView.swift */; };
 		70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */; };
+		70B2BCC6254DBE110084F6CD /* BloodTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */; };
+		70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */; };
+		70B2BCCC254DC4DF0084F6CD /* SelectedAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */; };
 		70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA14C253BD29200190B0E /* Test.mlmodel */; };
 		70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA153253BDC7A00190B0E /* BloodCell.swift */; };
 		70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */; };
@@ -37,6 +40,9 @@
 		7021344A253B514000B32752 /* BloodCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellViewController.swift; sourceTree = "<group>"; };
 		70213452253B5A8200B32752 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
 		70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNewsVideo.swift; sourceTree = "<group>"; };
+		70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTypeViewController.swift; sourceTree = "<group>"; };
+		70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTableCell.swift; sourceTree = "<group>"; };
+		70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAssets.swift; sourceTree = "<group>"; };
 		70BEA14C253BD29200190B0E /* Test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Test.mlmodel; sourceTree = "<group>"; };
 		70BEA153253BDC7A00190B0E /* BloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCell.swift; sourceTree = "<group>"; };
 		70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,9 @@
 				70213437253B4AE600B32752 /* SceneDelegate.swift */,
 				70213439253B4AE600B32752 /* ViewController.swift */,
 				7021343B253B4AE600B32752 /* Main.storyboard */,
+				70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */,
+				70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */,
+				70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */,
 				70213452253B5A8200B32752 /* MacawChartView.swift */,
 				70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */,
 				7021343E253B4AE800B32752 /* Assets.xcassets */,
@@ -230,14 +239,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7021343A253B4AE600B32752 /* ViewController.swift in Sources */,
+				70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */,
 				70D3C549253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel in Sources */,
 				70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */,
 				70213453253B5A8200B32752 /* MacawChartView.swift in Sources */,
 				70213436253B4AE600B32752 /* AppDelegate.swift in Sources */,
 				70D3C54C253D25F400F853E8 /* WhiteBloodCellCount.mlmodel in Sources */,
+				70B2BCCC254DC4DF0084F6CD /* SelectedAssets.swift in Sources */,
 				70213438253B4AE600B32752 /* SceneDelegate.swift in Sources */,
 				70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */,
 				70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */,
+				70B2BCC6254DBE110084F6CD /* BloodTypeViewController.swift in Sources */,
 				70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */,
 				7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */,
 			);
