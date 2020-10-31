@@ -12,21 +12,19 @@ import BSImagePicker
 class MultipleImagesViewController: UIViewController{
   
   var selectedImages : [PHAsset]!
+  let imagePicker = ImagePickerController()
+  
   override func viewDidLoad() {
         super.viewDidLoad()
+    //setup for imagePicker
+    imagePicker.settings.theme.selectionStyle = .numbered
+    imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
+    //use this to show different albums
+    imagePicker.settings.fetch.album.fetchResults.append(PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: imagePicker.settings.fetch.album.options))
+    //closures for imagePicker
   }
     
   @IBAction func sekectImagesClicked(_ sender: Any) {
-//    pickerController.assetType = .allPhotos
-//    pickerController.delegate = self
-//    pickerController.sourceType = .photo
-//    present(pickerController, animated: true, completion: nil)
-    let imagePicker = ImagePickerController()
-    //imagePicker.settings.selection.max = 5
-    imagePicker.settings.theme.selectionStyle = .numbered
-    imagePicker.settings.fetch.assets.supportedMediaTypes = [.image, .video]
-    imagePicker.settings.selection.unselectOnReachingMax = true
-
     let start = Date()
     self.presentImagePicker(imagePicker, select: { (asset) in
         print("Selected: \(asset)")
