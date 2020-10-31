@@ -76,6 +76,12 @@ class MacawChartView: MacawView {
       newNodes.append(valueText)
     }
     
+    //add label
+    //TODO: change font size
+    let chartLabelText = Text(text: "Blood Cell Count", align: .max, baseline: .mid, place: .move(dx: 200 + 20, dy: chartBaseY + 60))
+    chartLabelText.fill = Color.blue
+    newNodes.append(chartLabelText)
+    //
     let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.black.with(a: 0.25))
     newNodes.append(xAxis)
     
