@@ -1,4 +1,5 @@
 PODS:
+  - BSImagePicker (3.3.1)
   - CropViewController (2.5.5)
   - DKCamera (1.6.7)
   - DKImagePickerController (4.3.2):
@@ -58,11 +59,13 @@ PODS:
   - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
+  - BSImagePicker (~> 3.1)
   - DKImagePickerController
   - Macaw (= 0.9.7)
 
 SPEC REPOS:
   trunk:
+    - BSImagePicker
     - CropViewController
     - DKCamera
     - DKImagePickerController
@@ -73,6 +76,7 @@ SPEC REPOS:
     - SWXMLHash
 
 SPEC CHECKSUMS:
+  BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
   CropViewController: bd3ff11eeeaadc1e267bb9c3f3e9ee67a52d3285
   DKCamera: a902b66921fca14b7a75266feb8c7568aa7caa71
   DKImagePickerController: b5eb7f7a388e4643264105d648d01f727110fc3d
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: cc41a0dc81cf48b501fea76a7cdf6d08f1a0ea18
+PODFILE CHECKSUM: 13b51c00471268388e460ccd2fc7d87902fd3726
 
 COCOAPODS: 1.10.0.rc.1

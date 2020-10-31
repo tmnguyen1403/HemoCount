@@ -47,15 +47,15 @@ class MacawChartView: MacawView {
     for i in 0...maxLines {
       let y = yAxisHeight - (Double(i) * lineSpacing)
       
-      let valueLine = Line(x1: -5, y1: y, x2: lineWidth, y2: y).stroke(fill: Color.white.with(a: 0.10))
+      let valueLine = Line(x1: -5, y1: y, x2: lineWidth, y2: y).stroke(fill: Color.black.with(a: 0.10))
       let valueText = Text(text: "\(i * lineInterval / 10)", align: .max, baseline: .mid, place: .move(dx: -10, dy: y))
-      valueText.fill = Color.white
+      valueText.fill = Color.black
       
       newNodes.append(valueLine)
       newNodes.append(valueText)
     }
     
-    let yAxis = Line(x1: 0, y1: 0, x2: 0, y2: yAxisHeight).stroke(fill: Color.white.with(a: 0.25))
+    let yAxis = Line(x1: 0, y1: 0, x2: 0, y2: yAxisHeight).stroke(fill: Color.black.with(a: 0.25))
     newNodes.append(yAxis)
     
     return newNodes
@@ -68,15 +68,15 @@ class MacawChartView: MacawView {
     for i in 1...adjustedData.count {
       let x = (Double(i) * 100)
       let nameText = Text(text: (lastFiveShows[i-1].name), align: .max, baseline: .mid, place: .move(dx: x - 25, dy: chartBaseY + 15))
-      nameText.fill = Color.white
+      nameText.fill = Color.black
       newNodes.append(nameText)
       
       let valueText = Text(text: "\(Int(lastFiveShows[i-1].amount))", align: .max, baseline: .mid, place: .move(dx: x - 55, dy: chartBaseY - adjustedData[i-1]*10 - 10.0))
-      valueText.fill = Color.white
+      valueText.fill = Color.black
       newNodes.append(valueText)
     }
     
-    let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.white.with(a: 0.25))
+    let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.black.with(a: 0.25))
     newNodes.append(xAxis)
     
     return newNodes
