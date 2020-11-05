@@ -10,13 +10,13 @@ import Macaw
 
 class MacawChartView: MacawView {
   
-  static var lastFiveShows      = createDummyData()
+  static var bloodCells : [BloodCell]!
   static let maxValue           = 1200
   static let maxValueLineHeight = 300
   static let lineWidth: Double  = 400
   
   static let dataDivisor        = Double(maxValue/maxValueLineHeight)
-  static let adjustedData: [Double] = lastFiveShows.map({$0.amount / dataDivisor})
+  static let adjustedData: [Double] = bloodCells.map({$0.amount / dataDivisor})
   static var animations: [Animation] = []
   
   required init?(coder aDecoder: NSCoder) {
@@ -26,7 +26,7 @@ class MacawChartView: MacawView {
   
   public static func setData(_ data : [BloodCell]) {
     print("Called set Data")
-    lastFiveShows = data
+    bloodCells = data
   }
   
   private static func createChart() -> Group {
@@ -67,11 +67,11 @@ class MacawChartView: MacawView {
     
     for i in 1...adjustedData.count {
       let x = (Double(i) * 100)
-      let nameText = Text(text: (lastFiveShows[i-1].name), align: .max, baseline: .mid, place: .move(dx: x - 25, dy: chartBaseY + 15))
+      let nameText = Text(text: (bloodCells[i-1].name), align: .max, baseline: .mid, place: .move(dx: x - 25, dy: chartBaseY + 15))
       nameText.fill = Color.black
       newNodes.append(nameText)
       
-      let valueText = Text(text: "\(Int(lastFiveShows[i-1].amount))", align: .max, baseline: .mid, place: .move(dx: x - 55, dy: chartBaseY - adjustedData[i-1]*10 - 10.0))
+      let valueText = Text(text: "\(Int(bloodCells[i-1].amount))", align: .max, baseline: .mid, place: .move(dx: x - 55, dy: chartBaseY - adjustedData[i-1]*10 - 10.0))
       valueText.fill = Color.black
       newNodes.append(valueText)
     }
@@ -104,15 +104,6 @@ class MacawChartView: MacawView {
   
   static func playAnimation() {
     animations.combine().play()
-  }
-  
-  private static func createDummyData() -> [BloodCell] {
-    let one = BloodCell(name: "Eosinophil", amount: 522)
-    let two = BloodCell(name: "Lymphocyte", amount: 620)
-    let three = BloodCell(name: "Lymphocyte", amount: 456)
-    let four = BloodCell(name: "Neutrophil", amount: 568)
-    
-    return [one, two, three, four]
   }
 }
 /*

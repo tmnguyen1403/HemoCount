@@ -23,6 +23,8 @@
 		70B2BCCF254E03DE0084F6CD /* LymphocyteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */; };
 		70B2BCD4254E04E60084F6CD /* MonocyteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */; };
 		70B2BCD7254E04F40084F6CD /* NeutrophilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */; };
+		70B44ADE25538D9100D1958E /* BloodCellClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70B44ADD25538D9100D1958E /* BloodCellClassifier.mlmodel */; };
+		70B44AE22553B0F000D1958E /* ClassifiedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B44AE12553B0F000D1958E /* ClassifiedImages.swift */; };
 		70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA14C253BD29200190B0E /* Test.mlmodel */; };
 		70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA153253BDC7A00190B0E /* BloodCell.swift */; };
 		70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */; };
@@ -49,6 +51,8 @@
 		70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LymphocyteViewController.swift; sourceTree = "<group>"; };
 		70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonocyteViewController.swift; sourceTree = "<group>"; };
 		70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeutrophilViewController.swift; sourceTree = "<group>"; };
+		70B44ADD25538D9100D1958E /* BloodCellClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BloodCellClassifier.mlmodel; sourceTree = "<group>"; };
+		70B44AE12553B0F000D1958E /* ClassifiedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedImages.swift; sourceTree = "<group>"; };
 		70BEA14C253BD29200190B0E /* Test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Test.mlmodel; sourceTree = "<group>"; };
 		70BEA153253BDC7A00190B0E /* BloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCell.swift; sourceTree = "<group>"; };
 		70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		70213434253B4AE600B32752 /* WhiteBloodcellCount */ = {
 			isa = PBXGroup;
 			children = (
+				70B44ADD25538D9100D1958E /* BloodCellClassifier.mlmodel */,
 				70B2BCD1254E03E70084F6CD /* BloodTypeControllers */,
 				70D3C54B253D25F400F853E8 /* WhiteBloodCellCount.mlmodel */,
 				70D3C548253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel */,
@@ -126,6 +131,7 @@
 				7021344A253B514000B32752 /* BloodCellViewController.swift */,
 				70BEA153253BDC7A00190B0E /* BloodCell.swift */,
 				70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */,
+				70B44AE12553B0F000D1958E /* ClassifiedImages.swift */,
 			);
 			path = WhiteBloodcellCount;
 			sourceTree = "<group>";
@@ -256,10 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7021343A253B4AE600B32752 /* ViewController.swift in Sources */,
+				70B44AE22553B0F000D1958E /* ClassifiedImages.swift in Sources */,
 				70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */,
 				70D3C549253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel in Sources */,
 				70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */,
 				70B2BCD4254E04E60084F6CD /* MonocyteViewController.swift in Sources */,
+				70B44ADE25538D9100D1958E /* BloodCellClassifier.mlmodel in Sources */,
 				70213453253B5A8200B32752 /* MacawChartView.swift in Sources */,
 				70213436253B4AE600B32752 /* AppDelegate.swift in Sources */,
 				70D3C54C253D25F400F853E8 /* WhiteBloodCellCount.mlmodel in Sources */,
