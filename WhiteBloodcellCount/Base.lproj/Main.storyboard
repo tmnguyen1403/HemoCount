@@ -217,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="3233" y="-1085"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="5Qp-ev-2UX">
             <objects>
-                <viewController id="sch-bm-PIx" sceneMemberID="viewController">
+                <viewController id="sch-bm-PIx" customClass="LoginViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMP-5a-hxv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,7 +248,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4yt-zX-NcM" kind="show" id="9cr-QS-ewr"/>
+                                    <action selector="onSignIn:" destination="sch-bm-PIx" eventType="touchUpInside" id="uGg-Ze-hXh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-f3-OTS">
@@ -264,6 +264,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSignUp:" destination="sch-bm-PIx" eventType="touchUpInside" id="QxU-cr-eTc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gPa-sR-suk"/>
@@ -291,6 +294,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z1a-VG-lOM"/>
+                    <connections>
+                        <outlet property="passwordField" destination="CBK-SB-JrF" id="8Eq-P8-J5H"/>
+                        <outlet property="usernameField" destination="zcv-aC-1v0" id="hyd-F6-Stb"/>
+                        <segue destination="4yt-zX-NcM" kind="show" identifier="loginSegue" id="98k-YS-KFd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmn-j9-eql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
