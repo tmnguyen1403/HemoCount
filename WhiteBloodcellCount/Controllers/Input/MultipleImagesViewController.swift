@@ -18,18 +18,20 @@ class MultipleImagesViewController: UIViewController{
   
   var selectedImages : [PHAsset]!
   let imagePicker = ImagePickerController()
+  @IBOutlet weak var classificationProgressBar: UIProgressView!
   
   @IBOutlet weak var countBloodCellButton: UIButton!
   override func viewDidLoad() {
         super.viewDidLoad()
-//    countBloodCellButton.isEnabled = false
-//    countBloodCellButton.backgroundColor = UIColor.gray
     selectedImages = []
     //setup for imagePicker
     imagePicker.settings.theme.selectionStyle = .numbered
     imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
     //use this to show different albums
     imagePicker.settings.fetch.album.fetchResults.append(PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: imagePicker.settings.fetch.album.options))
+    //set up Progressbar
+    classificationProgressBar.progress = 0
+    classificationProgressBar.isHidden = true
     //closures for imagePicker
   }
     
@@ -56,6 +58,9 @@ class MultipleImagesViewController: UIViewController{
   @IBAction func onCountBloodCell(_ sender: Any) {
     print("clicked button")
     if selectedImages.count > 0 {
+      //display progress bar
+      classificationProgressBar.progress = 0.0
+      classificationProgressBar.isHidden = false
       //assgined assets to render
       var thumbnails : [UIImage] = []
       for asset in selectedImages {
@@ -63,6 +68,8 @@ class MultipleImagesViewController: UIViewController{
         thumbnails.append(thumbnail)
       }
       //reset data
+      ClassifiedImages.numberClassifiedImages = 0
+      ClassifiedImages.totalImages = selectedImages.count
       ClassifiedImages.eosinophil = []
       ClassifiedImages.lymphocyte = []
       ClassifiedImages.monocyte = []
@@ -70,17 +77,6 @@ class MultipleImagesViewController: UIViewController{
 
       //perform classification on selected images
       updateClassifications(for: thumbnails)
-      
-//      //setup data for chartview
-//      print("assetID: \(selectedImages[0].localIdentifier)")
-//      let data = [ BloodCell(name: "Eosinophil", amount: Double(ClassifiedImages.eosinophil.count)),
-//                   BloodCell(name: "Lymphocyte", amount: Double(ClassifiedImages.lymphocyte.count)),
-//                   BloodCell(name: "Monocyte", amount: Double(ClassifiedImages.monocyte.count)),
-//                  BloodCell(name: "Neutrophil", amount: Double(ClassifiedImages.neutrophil.count))]
-//      MacawChartView.setData(data);
-//
-//      //go to barchart
-//      self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
     }
   }
   
@@ -97,7 +93,7 @@ class MultipleImagesViewController: UIViewController{
           let model = try VNCoreMLModel(for: BloodCellClassifier().model)
           
           let request = VNCoreMLRequest(model: model, completionHandler: nil)
-        //request.imageCropAndScaleOption = .centerCrop
+        request.imageCropAndScaleOption = .centerCrop
           return request
       } catch {
           fatalError("Failed to load Vision ML model: \(error)")
@@ -133,57 +129,61 @@ class MultipleImagesViewController: UIViewController{
     var dispatchGroup = DispatchGroup()
     var dispatchClassifcation = DispatchQueue(label: "classification", qos: .userInitiated)
     //create array of ciImage
-    for image in images {
-      let resized_image = image//self.resizeImage(image: image, targetSize: CGSize(width: 320, height: 240))
+    images.map({ (image: UIImage) in
+      let resized_image = image
       let orientation = CGImagePropertyOrientation(rawValue: UInt32(resized_image.imageOrientation.rawValue))
 
-      print("Resize Image size helloo:", resized_image.size)
         guard let ciImage = CIImage(image: resized_image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
-      print("ci Image size:", ciImage)
-      dispatchClassifcation.async(group: dispatchGroup) {
+      dispatchClassifcation.async{
         dispatchGroup.enter()
         //create array of handler
         let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation!)
         do {
-          let request = self.classificationRequest
-          try handler.perform([self.classificationRequest])
-          if let results = request.results {
-            print("I got results")
-            let classifications = results as! [VNClassificationObservation]
-            let topLabel = classifications[0].identifier
-            
-            switch topLabel {
-              case "EOSINOPHIL":
-                ClassifiedImages.eosinophil.append(image)
-                break
-              case "LYMPHOCYTE":
-                ClassifiedImages.lymphocyte.append(image)
-                break
-              case "MONOCYTE":
-                ClassifiedImages.monocyte.append(image)
-                break
-              case "NEUTROPHIL":
-                ClassifiedImages.neutrophil.append(image)
-                break
-              default:
-                print("Error")
+            let request = self.classificationRequest
+            try handler.perform([self.classificationRequest])
+            if let results = request.results {
+              print("I got results \(ClassifiedImages.numberClassifiedImages)")
+              let classifications = results as! [VNClassificationObservation]
+              let topLabel = classifications[0].identifier
+              
+              switch topLabel {
+                case "EOSINOPHIL":
+                  ClassifiedImages.eosinophil.append(image)
+                  break
+                case "LYMPHOCYTE":
+                  ClassifiedImages.lymphocyte.append(image)
+                  break
+                case "MONOCYTE":
+                  ClassifiedImages.monocyte.append(image)
+                  break
+                case "NEUTROPHIL":
+                  ClassifiedImages.neutrophil.append(image)
+                  break
+                default:
+                  print("Error")
+              }
+              ClassifiedImages.numberClassifiedImages = ClassifiedImages.numberClassifiedImages + 1
+              //update progress
+              DispatchQueue.main.sync{
+                self.classificationProgressBar.progress = Float(ClassifiedImages.numberClassifiedImages) / Float(ClassifiedImages.totalImages)
+              }
             }
-          }
           dispatchGroup.leave()
-        } catch {
+          } catch {
             /*
              This handler catches general image processing errors. The `classificationRequest`'s
              completion handler `processClassifications(_:error:)` catches errors specific
              to processing that request.
              */
             print("Failed to perform classification.\n\(error.localizedDescription)")
+          }
         }
-      }
-    }
+      }//---------end dispatch
+    )//---------end map function
     
-    //group notify
+    //handle after classifications done
     dispatchGroup.notify(queue: dispatchClassifcation) {
-      //setup data for chartview
+      print("Finally made it")
       let data = [ BloodCell(name: "Eosinophil", amount: Double(ClassifiedImages.eosinophil.count)),
                    BloodCell(name: "Lymphocyte", amount: Double(ClassifiedImages.lymphocyte.count)),
                    BloodCell(name: "Monocyte", amount: Double(ClassifiedImages.monocyte.count)),
@@ -191,11 +191,11 @@ class MultipleImagesViewController: UIViewController{
       MacawChartView.setData(data);
       
       //go to barchart using the main thread
-      DispatchQueue.main.sync {
-        self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
+      DispatchQueue.main.async {
+          self.classificationProgressBar.isHidden = true
+          self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
       }
     }
-    //called segue
     
   }
   

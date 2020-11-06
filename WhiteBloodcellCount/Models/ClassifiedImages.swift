@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 struct ClassifiedImages {
+  static var numberClassifiedImages: Int = 0
+  static var totalImages: Int = 0
   static var eosinophil: [UIImage] = []
   static var lymphocyte: [UIImage] = []
   static var monocyte: [UIImage] = []

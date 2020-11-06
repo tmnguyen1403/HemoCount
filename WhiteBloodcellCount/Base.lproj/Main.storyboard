@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="stF-S5-z2a">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -42,16 +43,22 @@
                                     <action selector="onCountBloodCell:" destination="4yt-zX-NcM" eventType="touchUpInside" id="yG4-ko-laM"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-Ba-CBm">
+                                <rect key="frame" x="10" y="838" width="394" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0df-i0-g3S"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="fFf-ce-5m9" secondAttribute="trailing" constant="10" id="2Fn-pD-VYG"/>
+                            <constraint firstItem="0df-i0-g3S" firstAttribute="bottom" secondItem="SEd-Ba-CBm" secondAttribute="bottom" constant="20" id="3gX-Kg-3OD"/>
                             <constraint firstItem="fFf-ce-5m9" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="3mU-kd-49d"/>
                             <constraint firstItem="bSA-be-2uP" firstAttribute="top" secondItem="fFf-ce-5m9" secondAttribute="bottom" constant="20" id="Drg-8v-jnj"/>
                             <constraint firstItem="fFf-ce-5m9" firstAttribute="top" secondItem="0df-i0-g3S" secondAttribute="top" constant="20" id="M5H-ge-r4q"/>
                             <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bSA-be-2uP" secondAttribute="trailing" id="QkP-db-fkn"/>
+                            <constraint firstItem="SEd-Ba-CBm" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="Wth-JZ-9Ca"/>
                             <constraint firstItem="bSA-be-2uP" firstAttribute="centerX" secondItem="gXw-9V-Nnw" secondAttribute="centerX" id="cRj-KI-GFn"/>
+                            <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="SEd-Ba-CBm" secondAttribute="trailing" constant="10" id="cUM-KP-NUt"/>
                             <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="YuH-k3-RL6" secondAttribute="trailing" constant="10" id="eu0-h8-7t3"/>
                             <constraint firstItem="YuH-k3-RL6" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="sGD-vy-tAP"/>
                             <constraint firstItem="YuH-k3-RL6" firstAttribute="top" secondItem="bSA-be-2uP" secondAttribute="bottom" constant="20" id="vUn-Yh-PE6"/>
@@ -60,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l1c-yB-mVE"/>
                     <connections>
+                        <outlet property="classificationProgressBar" destination="SEd-Ba-CBm" id="Kw0-pS-amV"/>
                         <outlet property="countBloodCellButton" destination="YuH-k3-RL6" id="Gjj-a5-jxu"/>
                         <segue destination="RxH-Ui-EUc" kind="show" identifier="showBarChartSegue" id="O3Q-F4-H6a"/>
                     </connections>
