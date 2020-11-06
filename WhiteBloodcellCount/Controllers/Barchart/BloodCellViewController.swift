@@ -17,9 +17,4 @@ class BloodCellViewController: UIViewController {
     
         MacawChartView.playAnimation()
     }
-    
-  @IBAction func showViewBtnClicked(_ sender: Any) {
-    MacawChartView.playAnimation()
-  }
-  
 }

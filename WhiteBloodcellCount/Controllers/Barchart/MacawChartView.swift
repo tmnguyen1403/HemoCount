@@ -16,7 +16,7 @@ class MacawChartView: MacawView {
   static let lineWidth: Double  = 400
   
   static let dataDivisor        = Double(maxValue/maxValueLineHeight)
-  static let adjustedData: [Double] = bloodCells.map({$0.amount / dataDivisor})
+  static var adjustedData: [Double] = []
   static var animations: [Animation] = []
   
   required init?(coder aDecoder: NSCoder) {
@@ -26,13 +26,15 @@ class MacawChartView: MacawView {
   
   public static func setData(_ data : [BloodCell]) {
     print("Called set Data")
+    //var tmp = [BloodCell.init(name: "Tester", amount: 100), BloodCell.init(name: "Eocyte", amount: 20)]
     bloodCells = data
+    adjustedData = bloodCells.map({$0.amount / dataDivisor})
   }
   
   private static func createChart() -> Group {
     var items: [Node] = addYAxisItems() + addXAxisItems()
     items.append(createBars())
-    
+
     return Group(contents: items, place: .identity)
   }
   
