@@ -7,59 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4106486345D653810728C300 /* Pods_WhiteBloodcellCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5AD7BFDC40879AE8C37E9D /* Pods_WhiteBloodcellCount.framework */; };
+		56BB68EF278E3808321E302E /* Pods_WhiteBloodcellCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4AF48530BE7271EF6FD806 /* Pods_WhiteBloodcellCount.framework */; };
+		70033206255548E900E98B39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70033205255548E900E98B39 /* LoginViewController.swift */; };
 		70213436253B4AE600B32752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213435253B4AE600B32752 /* AppDelegate.swift */; };
 		70213438253B4AE600B32752 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213437253B4AE600B32752 /* SceneDelegate.swift */; };
-		7021343A253B4AE600B32752 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213439253B4AE600B32752 /* ViewController.swift */; };
 		7021343D253B4AE600B32752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7021343B253B4AE600B32752 /* Main.storyboard */; };
 		7021343F253B4AE800B32752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7021343E253B4AE800B32752 /* Assets.xcassets */; };
 		70213442253B4AE800B32752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70213440253B4AE800B32752 /* LaunchScreen.storyboard */; };
 		7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021344A253B514000B32752 /* BloodCellViewController.swift */; };
 		70213453253B5A8200B32752 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213452253B5A8200B32752 /* MacawChartView.swift */; };
-		70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */; };
 		70B2BCC6254DBE110084F6CD /* BloodTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */; };
 		70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */; };
-		70B2BCCC254DC4DF0084F6CD /* SelectedAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */; };
 		70B2BCCF254E03DE0084F6CD /* LymphocyteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */; };
 		70B2BCD4254E04E60084F6CD /* MonocyteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */; };
 		70B2BCD7254E04F40084F6CD /* NeutrophilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */; };
 		70B44ADE25538D9100D1958E /* BloodCellClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70B44ADD25538D9100D1958E /* BloodCellClassifier.mlmodel */; };
 		70B44AE22553B0F000D1958E /* ClassifiedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B44AE12553B0F000D1958E /* ClassifiedImages.swift */; };
-		70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA14C253BD29200190B0E /* Test.mlmodel */; };
 		70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA153253BDC7A00190B0E /* BloodCell.swift */; };
 		70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */; };
-		70D3C549253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70D3C548253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel */; };
-		70D3C54C253D25F400F853E8 /* WhiteBloodCellCount.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 70D3C54B253D25F400F853E8 /* WhiteBloodCellCount.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12558D993B8A39C76CAA1479 /* Pods-WhiteBloodcellCount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteBloodcellCount.release.xcconfig"; path = "Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount.release.xcconfig"; sourceTree = "<group>"; };
+		0D4DC489DD077B4B8BE3CBF8 /* Pods-WhiteBloodcellCount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteBloodcellCount.release.xcconfig"; path = "Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount.release.xcconfig"; sourceTree = "<group>"; };
+		6A4AF48530BE7271EF6FD806 /* Pods_WhiteBloodcellCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhiteBloodcellCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70033205255548E900E98B39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		70213432253B4AE600B32752 /* WhiteBloodcellCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiteBloodcellCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70213435253B4AE600B32752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70213437253B4AE600B32752 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		70213439253B4AE600B32752 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7021343C253B4AE600B32752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7021343E253B4AE800B32752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70213441253B4AE800B32752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70213443253B4AE800B32752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7021344A253B514000B32752 /* BloodCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellViewController.swift; sourceTree = "<group>"; };
 		70213452253B5A8200B32752 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
-		70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNewsVideo.swift; sourceTree = "<group>"; };
 		70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTypeViewController.swift; sourceTree = "<group>"; };
 		70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTableCell.swift; sourceTree = "<group>"; };
-		70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAssets.swift; sourceTree = "<group>"; };
 		70B2BCCE254E03DD0084F6CD /* LymphocyteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LymphocyteViewController.swift; sourceTree = "<group>"; };
 		70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonocyteViewController.swift; sourceTree = "<group>"; };
 		70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeutrophilViewController.swift; sourceTree = "<group>"; };
 		70B44ADD25538D9100D1958E /* BloodCellClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BloodCellClassifier.mlmodel; sourceTree = "<group>"; };
 		70B44AE12553B0F000D1958E /* ClassifiedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedImages.swift; sourceTree = "<group>"; };
-		70BEA14C253BD29200190B0E /* Test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Test.mlmodel; sourceTree = "<group>"; };
 		70BEA153253BDC7A00190B0E /* BloodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCell.swift; sourceTree = "<group>"; };
 		70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
-		70D3C548253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WhiteBloodCellCountOneMore.mlmodel; sourceTree = "<group>"; };
-		70D3C54B253D25F400F853E8 /* WhiteBloodCellCount.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WhiteBloodCellCount.mlmodel; sourceTree = "<group>"; };
-		AC5AD7BFDC40879AE8C37E9D /* Pods_WhiteBloodcellCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhiteBloodcellCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0D6A2487ABE610456FEA0CF /* Pods-WhiteBloodcellCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteBloodcellCount.debug.xcconfig"; path = "Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount.debug.xcconfig"; sourceTree = "<group>"; };
+		A04A52B74EBC8A37CC16490C /* Pods-WhiteBloodcellCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhiteBloodcellCount.debug.xcconfig"; path = "Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,28 +57,74 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4106486345D653810728C300 /* Pods_WhiteBloodcellCount.framework in Frameworks */,
+				56BB68EF278E3808321E302E /* Pods_WhiteBloodcellCount.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		235C24D2749A83B470F2471C /* Frameworks */ = {
+		59EC59C59ECD638C4DE780F3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AC5AD7BFDC40879AE8C37E9D /* Pods_WhiteBloodcellCount.framework */,
+				A04A52B74EBC8A37CC16490C /* Pods-WhiteBloodcellCount.debug.xcconfig */,
+				0D4DC489DD077B4B8BE3CBF8 /* Pods-WhiteBloodcellCount.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6C47490E21EF7FDACC6FFF02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A4AF48530BE7271EF6FD806 /* Pods_WhiteBloodcellCount.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		59EC59C59ECD638C4DE780F3 /* Pods */ = {
+		700331D42555463D00E98B39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D0D6A2487ABE610456FEA0CF /* Pods-WhiteBloodcellCount.debug.xcconfig */,
-				12558D993B8A39C76CAA1479 /* Pods-WhiteBloodcellCount.release.xcconfig */,
+				70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */,
+				70B44AE12553B0F000D1958E /* ClassifiedImages.swift */,
+				70BEA153253BDC7A00190B0E /* BloodCell.swift */,
 			);
-			path = Pods;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		700331D62555467D00E98B39 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70033204255548D000E98B39 /* Login */,
+				700331DA255546A100E98B39 /* Input */,
+				700331D72555468900E98B39 /* Barchart */,
+				70B2BCD1254E03E70084F6CD /* BloodType */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		700331D72555468900E98B39 /* Barchart */ = {
+			isa = PBXGroup;
+			children = (
+				7021344A253B514000B32752 /* BloodCellViewController.swift */,
+				70213452253B5A8200B32752 /* MacawChartView.swift */,
+			);
+			path = Barchart;
+			sourceTree = "<group>";
+		};
+		700331DA255546A100E98B39 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		70033204255548D000E98B39 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				70033205255548E900E98B39 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		70213429253B4AE600B32752 = {
@@ -97,7 +133,7 @@
 				70213434253B4AE600B32752 /* WhiteBloodcellCount */,
 				70213433253B4AE600B32752 /* Products */,
 				59EC59C59ECD638C4DE780F3 /* Pods */,
-				235C24D2749A83B470F2471C /* Frameworks */,
+				6C47490E21EF7FDACC6FFF02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,31 +148,20 @@
 		70213434253B4AE600B32752 /* WhiteBloodcellCount */ = {
 			isa = PBXGroup;
 			children = (
+				700331D62555467D00E98B39 /* Controllers */,
+				700331D42555463D00E98B39 /* Models */,
 				70B44ADD25538D9100D1958E /* BloodCellClassifier.mlmodel */,
-				70B2BCD1254E03E70084F6CD /* BloodTypeControllers */,
-				70D3C54B253D25F400F853E8 /* WhiteBloodCellCount.mlmodel */,
-				70D3C548253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel */,
-				70BEA14C253BD29200190B0E /* Test.mlmodel */,
 				70213435253B4AE600B32752 /* AppDelegate.swift */,
 				70213437253B4AE600B32752 /* SceneDelegate.swift */,
-				70213439253B4AE600B32752 /* ViewController.swift */,
 				7021343B253B4AE600B32752 /* Main.storyboard */,
-				70B2BCCB254DC4DF0084F6CD /* SelectedAssets.swift */,
-				70B2BCC8254DBE670084F6CD /* BloodTableCell.swift */,
-				70213452253B5A8200B32752 /* MacawChartView.swift */,
-				70213455253B5AEC00B32752 /* SwiftNewsVideo.swift */,
 				7021343E253B4AE800B32752 /* Assets.xcassets */,
 				70213440253B4AE800B32752 /* LaunchScreen.storyboard */,
 				70213443253B4AE800B32752 /* Info.plist */,
-				7021344A253B514000B32752 /* BloodCellViewController.swift */,
-				70BEA153253BDC7A00190B0E /* BloodCell.swift */,
-				70BEA164253C0B9800190B0E /* MultipleImagesViewController.swift */,
-				70B44AE12553B0F000D1958E /* ClassifiedImages.swift */,
 			);
 			path = WhiteBloodcellCount;
 			sourceTree = "<group>";
 		};
-		70B2BCD1254E03E70084F6CD /* BloodTypeControllers */ = {
+		70B2BCD1254E03E70084F6CD /* BloodType */ = {
 			isa = PBXGroup;
 			children = (
 				70B2BCC5254DBE110084F6CD /* BloodTypeViewController.swift */,
@@ -144,7 +169,7 @@
 				70B2BCD3254E04E60084F6CD /* MonocyteViewController.swift */,
 				70B2BCD6254E04F40084F6CD /* NeutrophilViewController.swift */,
 			);
-			path = BloodTypeControllers;
+			path = BloodType;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,11 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70213446253B4AE800B32752 /* Build configuration list for PBXNativeTarget "WhiteBloodcellCount" */;
 			buildPhases = (
-				92F6A97D822050F58AE4D126 /* [CP] Check Pods Manifest.lock */,
+				416E96390AF875EB25CAC3AD /* [CP] Check Pods Manifest.lock */,
 				7021342E253B4AE600B32752 /* Sources */,
 				7021342F253B4AE600B32752 /* Frameworks */,
 				70213430253B4AE600B32752 /* Resources */,
-				F2558E4F7EE35352F2AFCC74 /* [CP] Embed Pods Frameworks */,
+				1B1260FAD127959694825DA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,7 +240,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		92F6A97D822050F58AE4D126 /* [CP] Check Pods Manifest.lock */ = {
+		1B1260FAD127959694825DA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		416E96390AF875EB25CAC3AD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,23 +279,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2558E4F7EE35352F2AFCC74 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhiteBloodcellCount/Pods-WhiteBloodcellCount-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -261,21 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7021343A253B4AE600B32752 /* ViewController.swift in Sources */,
+				70033206255548E900E98B39 /* LoginViewController.swift in Sources */,
 				70B44AE22553B0F000D1958E /* ClassifiedImages.swift in Sources */,
 				70B2BCC9254DBE670084F6CD /* BloodTableCell.swift in Sources */,
-				70D3C549253D1ECB00F853E8 /* WhiteBloodCellCountOneMore.mlmodel in Sources */,
 				70BEA154253BDC7A00190B0E /* BloodCell.swift in Sources */,
 				70B2BCD4254E04E60084F6CD /* MonocyteViewController.swift in Sources */,
 				70B44ADE25538D9100D1958E /* BloodCellClassifier.mlmodel in Sources */,
 				70213453253B5A8200B32752 /* MacawChartView.swift in Sources */,
 				70213436253B4AE600B32752 /* AppDelegate.swift in Sources */,
-				70D3C54C253D25F400F853E8 /* WhiteBloodCellCount.mlmodel in Sources */,
-				70B2BCCC254DC4DF0084F6CD /* SelectedAssets.swift in Sources */,
 				70213438253B4AE600B32752 /* SceneDelegate.swift in Sources */,
-				70BEA14D253BD29200190B0E /* Test.mlmodel in Sources */,
 				70B2BCCF254E03DE0084F6CD /* LymphocyteViewController.swift in Sources */,
-				70213456253B5AEC00B32752 /* SwiftNewsVideo.swift in Sources */,
 				70B2BCC6254DBE110084F6CD /* BloodTypeViewController.swift in Sources */,
 				70BEA165253C0B9800190B0E /* MultipleImagesViewController.swift in Sources */,
 				7021344B253B514000B32752 /* BloodCellViewController.swift in Sources */,
@@ -423,7 +443,7 @@
 		};
 		70213447253B4AE800B32752 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0D6A2487ABE610456FEA0CF /* Pods-WhiteBloodcellCount.debug.xcconfig */;
+			baseConfigurationReference = A04A52B74EBC8A37CC16490C /* Pods-WhiteBloodcellCount.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,7 +463,7 @@
 		};
 		70213448253B4AE800B32752 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12558D993B8A39C76CAA1479 /* Pods-WhiteBloodcellCount.release.xcconfig */;
+			baseConfigurationReference = 0D4DC489DD077B4B8BE3CBF8 /* Pods-WhiteBloodcellCount.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
