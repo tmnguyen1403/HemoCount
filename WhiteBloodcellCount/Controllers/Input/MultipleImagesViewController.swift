@@ -71,16 +71,16 @@ class MultipleImagesViewController: UIViewController{
       //perform classification on selected images
       updateClassifications(for: thumbnails)
       
-      //setup data for chartview
-      print("assetID: \(selectedImages[0].localIdentifier)")
-      let data = [ BloodCell(name: "Eosinophil", amount: Double(ClassifiedImages.eosinophil.count)),
-                   BloodCell(name: "Lymphocyte", amount: Double(ClassifiedImages.lymphocyte.count)),
-                   BloodCell(name: "Monocyte", amount: Double(ClassifiedImages.monocyte.count)),
-                  BloodCell(name: "Neutrophil", amount: Double(ClassifiedImages.neutrophil.count))]
-      MacawChartView.setData(data);
-      
-      //go to barchart
-      self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
+//      //setup data for chartview
+//      print("assetID: \(selectedImages[0].localIdentifier)")
+//      let data = [ BloodCell(name: "Eosinophil", amount: Double(ClassifiedImages.eosinophil.count)),
+//                   BloodCell(name: "Lymphocyte", amount: Double(ClassifiedImages.lymphocyte.count)),
+//                   BloodCell(name: "Monocyte", amount: Double(ClassifiedImages.monocyte.count)),
+//                  BloodCell(name: "Neutrophil", amount: Double(ClassifiedImages.neutrophil.count))]
+//      MacawChartView.setData(data);
+//
+//      //go to barchart
+//      self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
     }
   }
   
@@ -129,7 +129,9 @@ class MultipleImagesViewController: UIViewController{
   
   /// - Tag: PerformRequests
   func updateClassifications(for images: [UIImage]) {
-    
+    //use this to monitor the classfication activities and notify when the work is done
+    var dispatchGroup = DispatchGroup()
+    var dispatchClassifcation = DispatchQueue(label: "classification", qos: .userInitiated)
     //create array of ciImage
     for image in images {
       let resized_image = image//self.resizeImage(image: image, targetSize: CGSize(width: 320, height: 240))
@@ -138,7 +140,8 @@ class MultipleImagesViewController: UIViewController{
       print("Resize Image size helloo:", resized_image.size)
         guard let ciImage = CIImage(image: resized_image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
       print("ci Image size:", ciImage)
-      DispatchQueue.global(qos: .userInitiated).sync {
+      dispatchClassifcation.async(group: dispatchGroup) {
+        dispatchGroup.enter()
         //create array of handler
         let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation!)
         do {
@@ -166,6 +169,7 @@ class MultipleImagesViewController: UIViewController{
                 print("Error")
             }
           }
+          dispatchGroup.leave()
         } catch {
             /*
              This handler catches general image processing errors. The `classificationRequest`'s
@@ -177,6 +181,20 @@ class MultipleImagesViewController: UIViewController{
       }
     }
     
+    //group notify
+    dispatchGroup.notify(queue: dispatchClassifcation) {
+      //setup data for chartview
+      let data = [ BloodCell(name: "Eosinophil", amount: Double(ClassifiedImages.eosinophil.count)),
+                   BloodCell(name: "Lymphocyte", amount: Double(ClassifiedImages.lymphocyte.count)),
+                   BloodCell(name: "Monocyte", amount: Double(ClassifiedImages.monocyte.count)),
+                  BloodCell(name: "Neutrophil", amount: Double(ClassifiedImages.neutrophil.count))]
+      MacawChartView.setData(data);
+      
+      //go to barchart using the main thread
+      DispatchQueue.main.sync {
+        self.performSegue(withIdentifier: "showBarChartSegue", sender: nil)
+      }
+    }
     //called segue
     
   }
