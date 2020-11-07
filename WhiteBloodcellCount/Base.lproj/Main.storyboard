@@ -2,75 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="stF-S5-z2a">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qJ-3u-DAP">
-                                <rect key="frame" x="19" y="475" width="146" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Upload Images">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="camera.viewfinder" catalog="system" symbolScale="large" renderingMode="template"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePicture" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZo-la-s8x"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-vb-1wK">
-                                <rect key="frame" x="10" y="263" width="394" height="186"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="9I0-kH-XWs"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HemoCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-Dc-PVx">
-                                <rect key="frame" x="174" y="126" width="92" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxz-f9-S5k">
-                                <rect key="frame" x="229" y="475" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Count Blood Cell"/>
-                                <connections>
-                                    <action selector="countBloodCellClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BeG-ge-dxg"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ci-vb-1wK" secondAttribute="trailing" constant="10" id="NDd-yr-0lQ"/>
-                            <constraint firstItem="4ci-vb-1wK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iRA-t3-OOR"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="dSk-49-Mdg"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="chooseButton" destination="0qJ-3u-DAP" id="54F-Rw-biW"/>
-                        <outlet property="imageView" destination="4ci-vb-1wK" id="yKV-RR-DJK"/>
-                        <segue destination="8r7-t4-JI6" kind="show" identifier="chartViewSegue" id="QAV-Nz-PlS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3575" y="-54"/>
-        </scene>
         <!--Multiple Images View Controller-->
         <scene sceneID="KSA-Un-dlP">
             <objects>
@@ -104,16 +43,22 @@
                                     <action selector="onCountBloodCell:" destination="4yt-zX-NcM" eventType="touchUpInside" id="yG4-ko-laM"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-Ba-CBm">
+                                <rect key="frame" x="10" y="838" width="394" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0df-i0-g3S"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="fFf-ce-5m9" secondAttribute="trailing" constant="10" id="2Fn-pD-VYG"/>
+                            <constraint firstItem="0df-i0-g3S" firstAttribute="bottom" secondItem="SEd-Ba-CBm" secondAttribute="bottom" constant="20" id="3gX-Kg-3OD"/>
                             <constraint firstItem="fFf-ce-5m9" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="3mU-kd-49d"/>
                             <constraint firstItem="bSA-be-2uP" firstAttribute="top" secondItem="fFf-ce-5m9" secondAttribute="bottom" constant="20" id="Drg-8v-jnj"/>
                             <constraint firstItem="fFf-ce-5m9" firstAttribute="top" secondItem="0df-i0-g3S" secondAttribute="top" constant="20" id="M5H-ge-r4q"/>
                             <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bSA-be-2uP" secondAttribute="trailing" id="QkP-db-fkn"/>
+                            <constraint firstItem="SEd-Ba-CBm" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="Wth-JZ-9Ca"/>
                             <constraint firstItem="bSA-be-2uP" firstAttribute="centerX" secondItem="gXw-9V-Nnw" secondAttribute="centerX" id="cRj-KI-GFn"/>
+                            <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="SEd-Ba-CBm" secondAttribute="trailing" constant="10" id="cUM-KP-NUt"/>
                             <constraint firstItem="0df-i0-g3S" firstAttribute="trailing" secondItem="YuH-k3-RL6" secondAttribute="trailing" constant="10" id="eu0-h8-7t3"/>
                             <constraint firstItem="YuH-k3-RL6" firstAttribute="leading" secondItem="0df-i0-g3S" secondAttribute="leading" constant="10" id="sGD-vy-tAP"/>
                             <constraint firstItem="YuH-k3-RL6" firstAttribute="top" secondItem="bSA-be-2uP" secondAttribute="bottom" constant="20" id="vUn-Yh-PE6"/>
@@ -122,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l1c-yB-mVE"/>
                     <connections>
+                        <outlet property="classificationProgressBar" destination="SEd-Ba-CBm" id="Kw0-pS-amV"/>
                         <outlet property="countBloodCellButton" destination="YuH-k3-RL6" id="Gjj-a5-jxu"/>
                         <segue destination="RxH-Ui-EUc" kind="show" identifier="showBarChartSegue" id="O3Q-F4-H6a"/>
                     </connections>
@@ -262,43 +208,6 @@
             <point key="canvasLocation" x="2445" y="842"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="tps-0m-wFD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SwJ-it-xYs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OVw-Tz-dbE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dDr-Kn-eys"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iuc-b3-3UC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4693" y="14"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bmd-vu-hsp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="8r7-t4-JI6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="1RM-gS-R84"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OY7-df-b9G">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6lm-Vt-Bpr">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NQy-mt-x3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4170" y="842"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="0gS-as-Dhz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="stF-S5-z2a" sceneMemberID="viewController">
@@ -316,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="3233" y="-1085"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="5Qp-ev-2UX">
             <objects>
-                <viewController id="sch-bm-PIx" sceneMemberID="viewController">
+                <viewController id="sch-bm-PIx" customClass="LoginViewController" customModule="WhiteBloodcellCount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMP-5a-hxv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +256,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4yt-zX-NcM" kind="show" id="9cr-QS-ewr"/>
+                                    <action selector="onSignIn:" destination="sch-bm-PIx" eventType="touchUpInside" id="uGg-Ze-hXh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-f3-OTS">
@@ -363,6 +272,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSignUp:" destination="sch-bm-PIx" eventType="touchUpInside" id="QxU-cr-eTc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gPa-sR-suk"/>
@@ -390,6 +302,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z1a-VG-lOM"/>
+                    <connections>
+                        <outlet property="passwordField" destination="CBK-SB-JrF" id="8Eq-P8-J5H"/>
+                        <outlet property="usernameField" destination="zcv-aC-1v0" id="hyd-F6-Stb"/>
+                        <segue destination="4yt-zX-NcM" kind="show" identifier="loginSegue" id="98k-YS-KFd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmn-j9-eql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -580,8 +497,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="icon" width="960" height="540"/>
         <image name="login_icon" width="1080" height="1920"/>
         <image name="logo" width="934" height="560"/>
         <namedColor name="AccentColor">
